@@ -1,0 +1,173 @@
+Connecting to database specified by database.yml
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateAlbums (20130701134507)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "albums" ("id" serial primary key, "name" character varying(255), "img_url" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130701134507')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAlbumsUsers (20130701145724)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "albums_users" ("album_id" integer, "user_id" integer) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130701145724')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20130701150440)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130701150440')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateArtists (20130701152200)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "artists" ("id" serial primary key, "name" character varying(255), "url" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130701152200')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSongs (20130701152303)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "songs" ("id" serial primary key, "artist_id" integer, "album_id" integer, "genre_id" integer, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130701152303')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateGenres (20130702053835)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "genres" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130702053835')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (7.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateAlbums (20130701134507)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "albums" ("id" serial primary key, "name" character varying(255), "img_url" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130701134507')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAlbumsUsers (20130701145724)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "albums_users" ("album_id" integer, "user_id" integer) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130701145724')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20130701150440)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130701150440')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateArtists (20130701152200)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "artists" ("id" serial primary key, "name" character varying(255), "url" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130701152200')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSongs (20130701152303)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "songs" ("id" serial primary key, "artist_id" integer, "album_id" integer, "genre_id" integer, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130701152303')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateGenres (20130702053835)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "genres" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130702053835')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateAlbums (20130701134507)
+Migrating to CreateAlbumsUsers (20130701145724)
+Migrating to CreateUsers (20130701150440)
+Migrating to CreateArtists (20130701152200)
+Migrating to CreateSongs (20130701152303)
+Migrating to CreateGenres (20130702053835)
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (108.5ms)[0m  DROP DATABASE IF EXISTS "tdd_tunr_test"
+  [1m[36m (252.4ms)[0m  [1mCREATE DATABASE "tdd_tunr_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.2ms)[0m  CREATE TABLE "albums" ("id" serial primary key, "name" character varying(255), "img_url" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "albums_users" ("album_id" integer, "user_id" integer) [0m
+  [1m[35m (2.8ms)[0m  CREATE TABLE "artists" ("id" serial primary key, "name" character varying(255), "url" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "genres" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "songs" ("id" serial primary key, "artist_id" integer, "album_id" integer, "genre_id" integer, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130702053835')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130701134507')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130701145724')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130701150440')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130701152200')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130701152303')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (118.2ms)[0m  DROP DATABASE IF EXISTS "tdd_tunr_test"
+  [1m[36m (444.3ms)[0m  [1mCREATE DATABASE "tdd_tunr_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.9ms)[0m  CREATE TABLE "albums" ("id" serial primary key, "name" character varying(255), "img_url" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "albums_users" ("album_id" integer, "user_id" integer) [0m
+  [1m[35m (2.8ms)[0m  CREATE TABLE "artists" ("id" serial primary key, "name" character varying(255), "url" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "genres" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE "songs" ("id" serial primary key, "artist_id" integer, "album_id" integer, "genre_id" integer, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130702053835')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130701134507')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130701145724')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130701150440')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130701152200')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130701152303')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (108.6ms)[0m  DROP DATABASE IF EXISTS "tdd_tunr_test"
+  [1m[36m (258.9ms)[0m  [1mCREATE DATABASE "tdd_tunr_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.4ms)[0m  CREATE TABLE "albums" ("id" serial primary key, "name" character varying(255), "img_url" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "albums_users" ("album_id" integer, "user_id" integer) [0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "artists" ("id" serial primary key, "name" character varying(255), "url" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "genres" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE "songs" ("id" serial primary key, "artist_id" integer, "album_id" integer, "genre_id" integer, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130702053835')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130701134507')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130701145724')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130701150440')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130701152200')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130701152303')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (113.9ms)[0m  DROP DATABASE IF EXISTS "tdd_tunr_test"
+  [1m[36m (379.8ms)[0m  [1mCREATE DATABASE "tdd_tunr_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.3ms)[0m  CREATE TABLE "albums" ("id" serial primary key, "name" character varying(255), "img_url" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "albums_users" ("album_id" integer, "user_id" integer) [0m
+  [1m[35m (2.8ms)[0m  CREATE TABLE "artists" ("id" serial primary key, "name" character varying(255), "url" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "genres" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE "songs" ("id" serial primary key, "artist_id" integer, "album_id" integer, "genre_id" integer, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130702053835')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130701134507')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130701145724')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130701150440')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130701152200')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130701152303')
