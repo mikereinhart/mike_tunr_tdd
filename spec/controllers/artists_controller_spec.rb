@@ -55,30 +55,24 @@ describe ArtistsController do
         end
 
         it 'redirects to artists index page' do
-          # artist.should_receive(:save)
           post :create
           response.should redirect_to artists_path
         end
-
-        # it 'creates a new artist' do 
-        #   expect{
-        #     post :create, {artist: attributes_for(:artist)}
-        #     }.to change{Artist.count}.by 1
-        # end
-        # it 'redirects to artists index page' do
-        #   post :create, {artist: attributes_for(:artist)}
-        #   response.should redirect_to artists_path
-        # end
       end
 
       context 'when save fails' do
+        it 'does not create a new artist' do
+          expect{
+            post :create, {artist: attributes_for(:invalid_artist)}
+            }.to change{Artist.count}.by 0
+        end
+
         it 'renders new page' do
           artist.should_receive(:save).and_return(false)
           post :create
-          response.should render_template :new
+          response.should render_template 'new'
         end
       end
-
 
       context 'with invalid attributes' do
         it 'does not create a new artist' do
@@ -87,6 +81,7 @@ describe ArtistsController do
             }.to change{Artist.count}.by 0
         end
         it 'renders the :new view' do 
+          artist.should_receive(:save).and_return(false)
           post :create, {artist: attributes_for(:invalid_artist)}
           response.should render_template :new
         end
@@ -98,11 +93,11 @@ describe ArtistsController do
     # member routes need to know the instance they are acting upon
     # therefore you need to pass in an object
 
-    # let(:artist) { create(:artist) }
+    let(:artist) { create(:artist) }
     # let makes a local variable within each block,
     # so you dont have to use an instance variable
 
-    let(:artist) { mock_model(Artist) }
+    # let(:artist) { mock_model(Artist).as_new_record }
     # THIS IS HOW YOU MAKE A MOCK MODEL
     # mock_model is an rspec method (basically). 
     # we are passing in the class we want to model
