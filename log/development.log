@@ -171,3 +171,28 @@ Connecting to database specified by database.yml
   [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130701150440')
   [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130701152200')[0m
   [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130701152303')
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-06 19:50:37 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (33.6ms)
+Compiled application.css  (0ms)  (pid 18152)
+Compiled jquery.js  (1ms)  (pid 18152)
+Compiled jquery_ujs.js  (0ms)  (pid 18152)
+Compiled application.js  (77ms)  (pid 18152)
+Completed 200 OK in 210ms (Views: 209.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2013-07-06 19:50:41 -0400
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (0.6ms)[0m  [1mSELECT "artists".* FROM "artists" [0m
+  Rendered artists/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 65ms (Views: 5.7ms | ActiveRecord: 41.3ms)
+
+
+Started GET "/artists/new" for 127.0.0.1 at 2013-07-06 19:50:49 -0400
+Processing by ArtistsController#new as HTML
+  Rendered artists/new.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 37ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml

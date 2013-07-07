@@ -11,12 +11,12 @@
 
 FactoryGirl.define do
   factory :artist, class: Artist do
-    # id 1
+    id 2
     name Faker::Name.name
     url Faker::Internet.url
   end
   factory :artist2, class: Artist do
-    # id 2
+    id 3
     name Faker::Name.name
     url Faker::Internet.url
   end

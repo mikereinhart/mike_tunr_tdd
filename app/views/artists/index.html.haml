@@ -6,6 +6,12 @@
   %thead
     %th Name
     %th URL
+    %th Options
   %tbody
-    %tr
+    - @artists.each do |artist|
+      %tr
+        %td= link_to "#{artist.name}", artist_path(artist)
+        %td= artist.url
+        %td= link_to 'Edit Artist', edit_artist_path(artist)
+        %td= link_to("Delete Artist", artist_path(artist), method: :delete)
 

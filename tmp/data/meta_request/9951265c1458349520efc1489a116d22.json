@@ -1,1 +1,0 @@
-[{"name":"process_action.action_controller","payload":{"controller":"HomeController","action":"index","params":{"controller":"home","action":"index"},"format":"html","method":"GET","path":"/","status":200,"view_runtime":6.425,"db_runtime":0},"time":"2013-07-06T16:18:51-04:00","transaction_id":"b52b8278e3cf9c3de892","end":"2013-07-06T16:18:51-04:00","duration":6.681}]
