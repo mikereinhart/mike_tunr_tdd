@@ -196,3 +196,16 @@ Processing by ArtistsController#new as HTML
   Rendered artists/new.html.haml within layouts/application (3.4ms)
 Completed 200 OK in 37ms (Views: 6.1ms | ActiveRecord: 0.0ms)
 Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-06 21:56:05 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2013-07-06 21:56:07 -0400
+Processing by ArtistsController#index as HTML
+  [1m[35mArtist Load (0.3ms)[0m  SELECT "artists".* FROM "artists" 
+  Rendered artists/index.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms)

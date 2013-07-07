@@ -76,24 +76,49 @@ feature 'Artists' do
       end
       current_path.should eq artists_path
       (Artist.count).should eq 3
+      page.should have_content('Mike')
     end
   end
 
 
 
   describe 'Artist Show Page' do
+    before { visit artist_path(@artist) }
+
     it "displays the artists name" do
-      visit artist_path(@artist)
       page.should have_content(@artist.name)
       page.should_not have_content(@artist2.name)
+    end
+    it 'displays an image of the artist' do
+      page.should have_selector("img[src='#{@artist.url}']")
+      page.should_not have_selector("img[src='#{@artist2.url}']")
     end
   end
 
 
 
   describe 'Edit Artist Page' do
-    it 'has a form with the artists info'
-    it 'saves changes made in the form'
+    it 'has a form with the artists info' do 
+      visit edit_artist_path(@artist)
+      page.should have_css("form#edit_artist_#{@artist.id.to_s}")
+      within('form') do
+        find_field('artist_name').value.should eq @artist.name
+        find_field('artist_url').value.should eq @artist.url
+      end
+    end
+
+    it 'saves changes made in the form once submit is clicked' do
+      visit edit_artist_path(@artist)
+      @old_name = @artist.name
+      @new_name = 'Mike'
+      within('form') do
+        fill_in('artist_name', :with => @new_name)
+      end
+      find("input[value='Update Artist']").click
+      current_path.should eq artist_path(@artist)
+      page.should have_content @new_name
+      page.should_not have_content @old_name
+    end
   end
 end
 
