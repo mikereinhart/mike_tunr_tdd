@@ -12,6 +12,7 @@
 FactoryGirl.define do
   factory :artist, class: Artist do
     id 2
+    # if we mock and stub these, the id must be removed
     name Faker::Name.name
     url Faker::Internet.url
   end

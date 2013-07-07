@@ -98,17 +98,16 @@ feature 'Artists' do
 
 
   describe 'Edit Artist Page' do
+    before { visit edit_artist_path(@artist) }
+
     it 'has a form with the artists info' do 
-      visit edit_artist_path(@artist)
       page.should have_css("form#edit_artist_#{@artist.id.to_s}")
       within('form') do
         find_field('artist_name').value.should eq @artist.name
         find_field('artist_url').value.should eq @artist.url
       end
     end
-
     it 'saves changes made in the form once submit is clicked' do
-      visit edit_artist_path(@artist)
       @old_name = @artist.name
       @new_name = 'Mike'
       within('form') do
